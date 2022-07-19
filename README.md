@@ -27,12 +27,16 @@ This project is to create an app so the user can learn and discover a certain Ci
 
 ## Change Log
 
-07/18/2022, 7:40PM EDT, Deployed
+Time Estimated: 3.5 Hours
 
+Time Started: 9:00
+
+Time Ended: 1:00
+
+Time: 4 hours
 
 ## Credit and Collaborations
 
 Day 1 - Mandy Mason and TJ Parker
 
 ![Lab 06 Whiteboard](img/lab06wb.jpg)
-
