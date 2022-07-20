@@ -37,6 +37,6 @@ Time: 4 hours
 
 ## Credit and Collaborations
 
-Day 1 - Mandy Mason and TJ Parker
+Day 1 - Mandy Mason and TJ Parker. Also Austin Limanek
 
 ![Lab 06 Whiteboard](img/lab06wb.jpg)

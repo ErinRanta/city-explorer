@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App" style={{height: "100vh", backgroundColor: "#32CD32", color: "white"}}>
+    <div className="App" style={{height: "500px", backgroundColor: "grey", color: "purple"}}>
       <Main />
     </div>
   );
