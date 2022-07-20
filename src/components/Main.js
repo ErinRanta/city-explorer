@@ -35,6 +35,7 @@ class Map extends Component {
           lat: obj.lat,
           lon: obj.lon,
           icon: obj.icon,
+          mapImage: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${obj.lat},${obj.lon}&zoom=12&size=400x400&format=png`
         })
       })
       .catch((error) => {
@@ -52,6 +53,7 @@ class Map extends Component {
 
    render() {
     return (
+
       <Container className='searchAndCard'>
         <Form onSubmit = {this.handleCitySearch} className='search'>
           <Form.Control type='text' onChange={this.handleChange} placeholder='Input city name' />
@@ -69,7 +71,7 @@ class Map extends Component {
         </Card>
         <Alert show={this.state.showAlert} variant="danger" onClose={() => this.setState({ showAlert: false })} dismissible>
           <Alert.Heading>
-            Input was invalid. Option: Check spelling.
+           Try Again! Error!
           </Alert.Heading>
           {this.state.errorMessage}
         </Alert>
