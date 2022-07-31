@@ -3,6 +3,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+
 import Alert from 'react-bootstrap/Alert';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -48,17 +49,17 @@ class Main extends React.Component {
             this.setState({forecast: response.data});
             this.forecastArr = response.data.map(el => <Col key={response.data.indexOf(el)}><strong>{el.date}</strong><br />{el.condition}<br />High of {el.high}, low of {el.low}</Col>);
             return this.forecastArr;
-        })
-        .catch(err => {
-            console.log(err);
-            this.setState({error:`Sorry, I don't have the weather for that city! (${err.code}: ${err.message})`});
-        })
-    }
+
+
+
+
+
 
     getMovies = (cityName) => {
         const movieQuery = `${this.server}/movies?cityName=${cityName}`;
         console.log('movieQuery', movieQuery);
         axios.get(movieQuery)
+
 
         .then(response => {
             console.log('main move response', response);
@@ -76,6 +77,8 @@ class Main extends React.Component {
         const API = `${this.locationUrl}&key=pk.2a77c6b8a24ce449e5fbe8f0f482de27=${searchFor}`;
         // const API = `${this.locationUrl}&key=${this.locationApiKey}&q=${searchFor}`;
         axios.get(API)
+
+  
 
         .then(response => {
             this.setState({ cityName:this.state.searchFor, lat:response.data[0].lat, lon:response.data[0].lon });
