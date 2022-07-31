@@ -49,12 +49,15 @@ class Main extends React.Component {
             this.setState({forecast: response.data});
             this.forecastArr = response.data.map(el => <Col key={response.data.indexOf(el)}><strong>{el.date}</strong><br />{el.condition}<br />High of {el.high}, low of {el.low}</Col>);
             return this.forecastArr;
+
         })
             .catch(err => {
               console.log(err);
               this.setState({error:`Sorry, I don't have the weather for that city! (${err.code}: ${err.message})`});
           })
       }
+
+
 
 
 
