@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Row from 'react-bootstrap/Row';
-import Movie from './Movie.js';
+import Movie from './Movies.js';
 
 class Movies extends React.Component {
     constructor(props) {
