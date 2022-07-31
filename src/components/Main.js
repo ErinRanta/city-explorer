@@ -8,8 +8,10 @@ import Alert from 'react-bootstrap/Alert';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
+// import Map from './Map.js';
+import Weather from './Weather.js';
+import Movies from './Movies.js'
 
-// const API_SERVER = process.env.REACT_APP_API;
 
 class Main extends React.Component {
 
@@ -53,7 +55,7 @@ class Main extends React.Component {
         })
             .catch(err => {
               console.log(err);
-              this.setState({error:`Sorry, I don't have the weather for that city! (${err.code}: ${err.message})`});
+              this.setState({error:`I don't have the weather for that city, please try a different one! (${err.code}: ${err.message})`});
           })
       }
 
@@ -76,14 +78,13 @@ class Main extends React.Component {
         })
         .catch(err => {
             console.log(err);
-            this.setState({error:`Sorry, I don't have movie info for that city! (${err.code}: ${err.message})`});
+            this.setState({error:`We don't have movie info for that city, sorry! (${err.code}: ${err.message})`});
         })
     }
     
     
     handleSearchCity = (searchFor) => {
         const API = `${this.locationUrl}&key=pk.2a77c6b8a24ce449e5fbe8f0f482de27=${searchFor}`;
-        // const API = `${this.locationUrl}&key=${this.locationApiKey}&q=${searchFor}`;
         axios.get(API)
 
   
@@ -103,46 +104,41 @@ class Main extends React.Component {
 
 
     render() {
-        return (
-        <div className="Main">
-            <Alert show={this.state.error} onClose={() => this.setState({error:false})} dismissible>{this.state.error}</Alert>
-            <Row>
-                <Col id="mainInfo">
-                    <div id="searchForm">
-                        <Form onSubmit={this.handleSubmit}>
-                            <Row>
-                                <Col>
-                                    <Form.Control type="text" onChange={this.handleInputCity} placeholder="Search for a city" />
-                                </Col>
-                                <Col>
-                                    <Button variant="primary" type="submit">Explore!</Button>
-                                </Col>
-                            </Row>
-                        </Form>
-                    </div>
-                    <Card id="results">
-                        <Card.Body>
-                            <Card.Title>{this.state.cityName}</Card.Title>
-                            <Card.Subtitle>Latitude: {Math.round(this.state.lat)}, <br />Longitude: {Math.round(this.state.lon)}</Card.Subtitle>
-                        </Card.Body>
-                    </Card>
-                    <Card id="forecastCard">
-                        <Card.Title>16-day Forecast</Card.Title>
-                        <Card.Body>
-                            {this.forecastArr}
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col>
-                    <Map key={this.state.cityName} lat={this.state.lat} lon={this.state.lon} />
-                </Col>
-            </Row>
-            <Row>
-                {this.moviesArr}
-            </Row>
-        </div>
-        );
-    }
+      return (
+      <div className="Map">
+          <Alert show={this.state.error} onClose={() => this.setState({error:false})} dismissible>{this.state.error}</Alert>
+          <Row>
+              <Col id="mainInfo">
+                  <div id="searchForm">
+                      <Form onSubmit={this.handleSubmit}>
+                          <Row>
+                              <Col>
+                                  <Form.Control type="text" onChange={this.handleInputCity} placeholder="Search for a city" />
+                              </Col>
+                              <Col>
+                                  <Button variant="primary" type="submit">Explore!</Button>
+                              </Col>
+                          </Row>
+                      </Form>
+                  </div>
+                  <Card id="results">
+                      <Card.Body>
+                          <Card.Title>{this.state.cityName}</Card.Title>
+                          <Card.Subtitle>Latitude: {Math.round(this.state.lat)}, <br />Longitude: {Math.round(this.state.lon)}</Card.Subtitle>
+                      </Card.Body>
+                  </Card>
+                  <Weather forecast={this.state.forecast}  />
+              </Col>
+              <Col>
+                  <Map lat={this.state.lat} lon={this.state.lon}/>
+              </Col>
+          </Row>
+          <Row>
+              <Movies movies={this.state.movies} />
+          </Row>
+      </div>
+      );
   }
-  
-  export default Main;
+}
+
+export default Main;
