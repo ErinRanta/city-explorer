@@ -75,7 +75,7 @@ class Main extends React.Component {
         })
         .catch(err => {
             console.log(err);
-            this.setState({error:`I don't have movie info for that city, sorry! (${err.code}: ${err.message})`});
+            this.setState({error:`We don't have movie info for that city, sorry! (${err.code}: ${err.message})`});
         })
     }
     
