@@ -1,14 +1,9 @@
-import {Component} from 'react';
-
-class Footer extends Component{
-
-render(){
+const Footer = () => {  
   return (
-    <p style={{marginTop: '100%', backgroundColor: '#a9cfb3', color: 'blue', fontWeight: 'bold'}}>&copy; Erin Ranta 2022</p>
-
-
-    )
-  }
+      <footer>
+          <p>Hope You Enjoyed! -Erin</p>
+      </footer>
+  );
 }
 
 export default Footer;
