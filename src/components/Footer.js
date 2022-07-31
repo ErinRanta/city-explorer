@@ -1,7 +1,7 @@
 const Footer = () => {  
   return (
       <footer>
-          <p>Hope You Enjoyed! -Erin</p>
+          <p>Hope You Enjoyed!-Erin</p>
       </footer>
   );
 }
