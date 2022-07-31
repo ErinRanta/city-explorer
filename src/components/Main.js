@@ -1,4 +1,4 @@
-// import Map from './Map.js';
+import Map from './Map.js';
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 
+// const API_SERVER = process.env.REACT_APP_API;
 
 class Main extends React.Component {
 
@@ -25,7 +26,7 @@ class Main extends React.Component {
         this.weatherApiKey = process.env.REACT_APP_WEATHERBIT_API_KEY;
         this.locationUrl = "https://us1.locationiq.com/v1/search.php?format=json";
         this.weatherUrl = "https://api.weatherbit.io/v2.0/forecast/daily?";
-        this.server = "https://city-explorer-b34ce2.herokuapp.com"
+        this.server = "https://city-explorer-erin.herokuapp.com/"
         this.forecastArr = [];
     }
     
@@ -72,7 +73,7 @@ class Main extends React.Component {
     
     
     handleSearchCity = (searchFor) => {
-        const API = `${this.locationUrl}&key=pk.0b8f887fdd8b9e9ce24daafe3e11972a&q=${searchFor}`;
+        const API = `${this.locationUrl}&key=pk.2a77c6b8a24ce449e5fbe8f0f482de27=${searchFor}`;
         // const API = `${this.locationUrl}&key=${this.locationApiKey}&q=${searchFor}`;
         axios.get(API)
 

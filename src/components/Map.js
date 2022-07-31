@@ -6,11 +6,11 @@ class Map extends React.Component {
         super(props);
         this.lat = props.lat;
         this.lon = props.lon;
-        this.mapSearchUrl = 'https://maps.locationiq.com/v3/staticmap?';
+        this.mapSearchUrl = 'https://my.locationiq.com/dashboard/accesstokens/view?';
         this.locationApiKey = process.env.REACT_APP_LOCATION_IQ_API_KEY;
     }
 
-    // full url https://maps.locationiq.com/v3/staticmap?key=pk.0b8f887fdd8b9e9ce24daafe3e11972a&center=48,-122
+    // full url https://my.locationiq.com/dashboard/accesstokens/view?at=cGsuMmE3N2M2YjhhMjRjZTQ0OWU1ZmJlOGYwZjQ4MmRlMjc=
 
     render() {
         // console.log('Map.props.lat', this.props.lat, 'Map.lon', this.lon)
