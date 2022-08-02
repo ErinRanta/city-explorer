@@ -81,7 +81,7 @@ class Main extends React.Component {
     
     
     handleSearchCity = (searchFor) => {
-        const API = `${this.locationUrl}&key=pk.2a77c6b8a24ce449e5fbe8f0f482de27=${searchFor}`;
+        const API = `${this.locationUrl} ${searchFor}`;
         axios.get(API)
 
   
