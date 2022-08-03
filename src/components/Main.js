@@ -22,8 +22,9 @@ class Main extends React.Component {
         };
         this.apiKey = process.env.REACT_APP_API_KEY;
         this.searchUrl = "https://us1.locationiq.com/v1/search.php?format=json&";
-        this.weatherUrl = ""
-        this.cities = props.cities;
+        this.weatherUrl = "https://api.weatherbit.io/v2.0/forecast/daily?";
+        this.server = "https://city-explorer-erin.herokuapp.com/";
+        this.forecastArr = [];
         // this.blankSearch = true;
     }
     
