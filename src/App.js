@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App" style={{height: "500px", backgroundColor: "grey", color: "purple"}}>
       <Main />
+    
     </div>
   );
 }

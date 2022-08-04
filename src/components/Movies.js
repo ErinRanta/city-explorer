@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Row from 'react-bootstrap/Row';
 import Movie from './Movies.js';
 
@@ -10,12 +9,11 @@ class Movies extends React.Component {
             error:null
         }
     }
-    
-     render() {
+    render() {
         return (
             <div className="movies">
             <Row>
-                <Movie movies={this.props.movies} />
+            <Movie movies={this.props.movies} />
             </Row>
             </div>
         )

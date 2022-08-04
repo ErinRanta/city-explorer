@@ -8,7 +8,7 @@ class Weather extends React.Component {
         this.cityName = props.cityName;
         this.lat = Math.round(props.lat);
         this.lon = Math.round(props.lon);
-        this.weatherSearchUrl = 'http://localhost:3002/weather?';
+        this.weatherSearchUrl = 'http://localhost:3000/weather?';
         this.state = {  
             error:false,
             forecast:[]
@@ -25,7 +25,7 @@ class Weather extends React.Component {
         .catch(err => {
             console.log(err);
             this.setState({error:`Sorry, I don't have the weather for that city! Please enter Seattle, Amman, or Paris.`});
-            // eventually, this shouldn't be triggered by the same conditions as the invalid locationIQ search error - either add another state or move the whole weather process into a component & deal with it there
+            
         })
     }
 

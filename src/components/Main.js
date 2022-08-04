@@ -54,12 +54,12 @@ class Main extends React.Component {
             return this.forecastArr;
 
         })
-            .catch(err => {
-              console.log(err);
-              this.setState({error:`I don't have the weather for that city, please try a different one! (${err.code}: ${err.message})`});
+            .catch(error => {
+              console.log(error);
+              this.setState({error:`I don't have the weather for that city, please try a different one! (${error.code}: ${error.message})`});
           })
-      }
-
+        }
+    }
 
 
 
@@ -70,7 +70,7 @@ class Main extends React.Component {
         const movieQuery = `${this.server}/movies?cityName=${cityName}`;
         console.log('movieQuery', movieQuery);
         axios.get(movieQuery)
-
+    
 
         .then(response => {
             console.log('main move response', response);
@@ -104,8 +104,9 @@ class Main extends React.Component {
 
 
 
-    render() {
-      return (
+    render(){
+       return (
+        // <h1>hello world!</h1>
       <div className="Map">
           <Alert show={this.state.error} onClose={() => this.setState({error:false})} dismissible>{this.state.error}</Alert>
           <Row>
@@ -139,7 +140,9 @@ class Main extends React.Component {
           </Row>
       </div>
       );
-  }
-}
+      }
+    
+    
 
-export default Main;
+
+    export default Main;
