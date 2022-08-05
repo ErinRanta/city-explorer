@@ -1,12 +1,15 @@
-import Main from './components/Main'
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import Header from './components/Header.js';
+import Main from './components/Main.js';
+import Footer from './components/Footer.js';
+import React from 'react';
 
 function App() {
   return (
-    <div className="App" style={{height: "500px", backgroundColor: "grey", color: "purple"}}>
+    <div className="App">
+      <Header />
       <Main />
-    
+      <Footer />
     </div>
   );
 }

@@ -5,3 +5,9 @@
 .SearchForm > * {
   margin: 0.5rem;
 }
+
+body * {
+
+  border: solid 1px black;
+  
+}
